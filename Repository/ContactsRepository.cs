@@ -38,6 +38,7 @@ namespace ContactsApi.Repository
       if (itemToRemove != null)
       {
         _context.Contacts.Remove(itemToRemove);
+        _context.SaveChanges();
       }
     }
 
@@ -55,6 +56,8 @@ namespace ContactsApi.Repository
         itemToUpdate.MobilePhone = item.MobilePhone;
         itemToUpdate.DateOfBirth = item.DateOfBirth;
         itemToUpdate.AnniversaryDate = item.AnniversaryDate;
+
+        _context.SaveChanges();
       }
     }
     // static List<Contact> ContactList = new List<Contact>();

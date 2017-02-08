@@ -19,8 +19,6 @@ namespace ContactsApi.Controllers
     [HttpGet]
     public IEnumerable<Contact> GetAll()
     {
-      System.Console.WriteLine("GetAll() called");
-      System.Console.WriteLine(ContactsRepo.GetAll());
       var tmpcontacts = ContactsRepo.GetAll();
       return ContactsRepo.GetAll();
     }
@@ -47,7 +45,7 @@ namespace ContactsApi.Controllers
       return CreatedAtRoute("GetContacts", new { Controller = "Contacts", id = item.MobilePhone }, item);
     }
 
-    [HttpPut]
+    [HttpPut("{id}")]
     public IActionResult Update(string id, [FromBody] Contact item)
     {
       if (item == null)
