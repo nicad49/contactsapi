@@ -19,6 +19,9 @@ namespace ContactsApi.Controllers
     [HttpGet]
     public IEnumerable<Contact> GetAll()
     {
+      System.Console.WriteLine("GetAll() called");
+      System.Console.WriteLine(ContactsRepo.GetAll());
+      var tmpcontacts = ContactsRepo.GetAll();
       return ContactsRepo.GetAll();
     }
 

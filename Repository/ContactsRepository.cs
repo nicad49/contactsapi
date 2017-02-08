@@ -17,6 +17,7 @@ namespace ContactsApi.Repository
     public void Add(Contact item)
     {
       _context.Contacts.Add(item);
+      _context.SaveChanges();
     }
 
     public Contact Find(string key)
